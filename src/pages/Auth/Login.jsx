@@ -5,24 +5,25 @@ import { useNavigate } from "react-router-dom";
 export const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
-  const handleSubmit = async(e) => {
-    e.preventDefault
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
     try {
-      const response = await axiosInstance.get("/login", {
+      const response = await axiosInstance.post("/login", {
         username,
-        password
-      })
-      console.log(response.data.msg)
+        password,
+      });
+      console.log(response.data.msg);
+      navigate("/home");
     } catch (error) {
-      console.log(error.response.data.msg)
+      console.log(error.response.data.msg);
     }
-  }
+  };
 
   return (
-     <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center h-screen">
       <form
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         onSubmit={handleSubmit}
@@ -72,5 +73,5 @@ export const Login = () => {
         </div>
       </form>
     </div>
-  )
+  );
 };
