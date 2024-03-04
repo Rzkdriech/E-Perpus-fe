@@ -1,12 +1,12 @@
 import React from "react";
-import { useMe } from "../../hooks/useMe.jsx";
 
-export const Navbar = ({username}) => {
+
+export const Navbar = () => {
 
   return (
     <div className="navbar bg-base-100 bg-neutral text-neutral-content">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl">@{username}</a>
+        <a className="btn btn-ghost text-xl">@Rzkdriech</a>
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
